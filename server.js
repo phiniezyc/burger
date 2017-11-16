@@ -10,9 +10,9 @@ var app = express();
 app.use(express.static("public"));
 
 // changed this from false to true
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 //added this in from last assignment 
-//app.use(bodyParser.json());
+app.use(bodyParser.json());
 
 // Set Handlebars.
 var exphbs = require("express-handlebars");
