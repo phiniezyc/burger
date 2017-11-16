@@ -42,8 +42,7 @@ var connection = require("./connection.js");
 // Object for all our SQL statement functions.
 var orm = {
     all: function (tableInput, cb) {
-        var queryString = "SELECT * FROM " + tableInput + ";";
-        connection.query(queryString, function (err, result) {
+        connection.query("SELECT * FROM " + tableInput + ";", function (err, result) {
             if (err) {
                 throw err;
             }

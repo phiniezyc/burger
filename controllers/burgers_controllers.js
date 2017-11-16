@@ -7,8 +7,10 @@ var burger = require("../models/burger");
 
 //Create all our routes and set up logic within those routes where required.
 router.get("/", function (req, res) {
-    res.render("index");
-
+    burger.all(function(burger_data){
+        console.log(burger_data);
+        res.render("index");
+    });
 });
 
 router.post("/api/burgers", function (req, res) {
