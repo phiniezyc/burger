@@ -9,7 +9,7 @@ var app = express();
 
 app.use(express.static("public"));
 
-// changed this from false to true
+
 app.use(bodyParser.urlencoded({ extended: false }));
 //added this in from last assignment 
 //app.use(bodyParser.json());
