@@ -10,9 +10,9 @@ var app = express();
 app.use(express.static("public"));
 
 // changed this from false to true
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 //added this in from last assignment 
-app.use(bodyParser.json());
+//app.use(bodyParser.json());
 
 // Set Handlebars.
 var exphbs = require("express-handlebars");
@@ -21,9 +21,9 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
-var routes = require("./controllers/burgers_controllers");
+var routes = require("./controllers/burgers_controllers.js");
 
 app.use("/", routes);
 
 
-app.listen(port, () => console.log("listening on PORT: " + port));
+app.listen(port);

@@ -9,26 +9,26 @@ var burger = require("../models/burger");
 router.get("/", function (req, res) {
     burger.all(function(burger_data){
         console.log(burger_data);
-        res.render("index");
+        res.render("index", {burger_data});
     });
 });
 
-router.post("/api/burgers", function (req, res) {
-    console.log(res.body);
-    console.log(res.body);
-    res.send("test");
+// router.post("/api/burgers", function (req, res) {
+//     console.log(res.body);
+//     console.log(res.body);
+//     res.send("test");
 
-    burger.create([
-        "name"
-    ], [
-        req.body.name,
-    ], function (result) {
-        // Send back the ID of the new quote
-        res.json({
-            id: result.insertId
-        });
-    });
-});
+//     burger.create([
+//         "name"
+//     ], [
+//         req.body.name,
+//     ], function (result) {
+//         // Send back the ID of the new quote
+//         res.json({
+//             id: result.insertId
+//         });
+//     });
+// });
 
 
 // router.delete("/api/cats/:id", function (req, res) {
