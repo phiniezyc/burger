@@ -12,9 +12,9 @@ router.get("/", function (req, res) {
 });
 
 router.post("/api/burgers", function (req, res) {
-    console.log(req.body.burger);
-    console.log(req.body.name);
-    console.log("Post Test");
+    console.log(res.body);
+    console.log(res.body);
+    res.send("test");
 
     burger.create([
         "name"
