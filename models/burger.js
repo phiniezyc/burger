@@ -13,8 +13,6 @@ const burger = {
     create: (name, cb) => {
         orm.create("burgers", name, cb);
     },
-
-
 };
 
 // // Export the database functions for the controller (routes.js).

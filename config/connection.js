@@ -1,6 +1,8 @@
 // Set up MySQL connection.
 const mysql = require("mysql");
 
+
+
 const connection = mysql.createConnection({
     port: 3306,
     host: "localhost",
@@ -17,6 +19,8 @@ connection.connect((err) => {
     }
     console.log("connected as id " + connection.threadId);
 });
+
+
 
 // Export connection for ORM to use.
 module.exports = connection;

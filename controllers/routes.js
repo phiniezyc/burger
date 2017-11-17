@@ -2,15 +2,16 @@ const express = require("express");
 const router = express.Router();
 
 
+
 // Import the model (burger.js) to use its database functions.
 const burger = require("../models/burger.js");
 
 //Create all our routes and set up logic within those routes where required.
 router.get("/", (req, res) => {
-    burger.all((burger_data) => {
-        console.log(burger_data);
+    burger.all((burgerInfo) => {
+        console.log(burgerInfo);
         res.render('index', {
-            burger_data
+            burgerInfo
         });
     });
 });
@@ -26,7 +27,6 @@ router.post("/burgers/create", (req, res) => {
         res.redirect("/");
     });
 });
-
 
 
 

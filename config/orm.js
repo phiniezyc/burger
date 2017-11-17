@@ -2,6 +2,7 @@
 const connection = require("./connection.js");
 
 
+
 // Object for all SQL statement functions.
 const orm = {
     all: (tableInput, cb) => {
@@ -25,6 +26,8 @@ const orm = {
 
 
 };
+
+
 
 // Export the orm object for the model (burger.js) in models.
 module.exports = orm;
