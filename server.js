@@ -1,12 +1,12 @@
-var express = require("express");
-var bodyParser = require("body-parser");
-var methodOverride = require("method-override");
+const express = require("express");
+const bodyParser = require("body-parser");
+const methodOverride = require("method-override");
 // Set Handlebars.
-var exphbs = require("express-handlebars");
+const exphbs = require("express-handlebars");
 
-var port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
-var app = express();
+const app = express();
 
 // Serve static content for the app from the "public" directory in the application directory.
 
@@ -24,7 +24,7 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
-var routes = require("./controllers/routes.js");
+const routes = require("./controllers/routes.js");
 
 app.use("/", routes);
 
