@@ -25,5 +25,5 @@ var orm = {
 
 };
 
-// Export the orm object for the model (cat.js).
+// Export the orm object for the model (burger.js) in models.
 module.exports = orm;
