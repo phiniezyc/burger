@@ -2,16 +2,17 @@
 const orm = require("../config/orm.js");
 
 const burger = {
-    all: (cb) => {
+    //burger object takes a callback since we want to pass future data to it 
+    all: (callback) => {
         orm.all('burgers', (res) => {
-            cb(res);
+            callback(res);
         });
     },
-    update: (id, cb) => {
-        orm.update("burgers", id, cb);
+    update: (id, callback) => {
+        orm.update("burgers", id, callback);
     },
-    create: (name, cb) => {
-        orm.create("burgers", name, cb);
+    create: (name, callback) => {
+        orm.create("burgers", name, callback);
     },
 };
 

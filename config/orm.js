@@ -5,22 +5,24 @@ const connection = require("./connection.js");
 
 // Object for all SQL statement functions.
 const orm = {
-    all: (tableInput, cb) => {
+    //tableInput is the data columns, etc in our SQL database
+    //orm object takes data to be inserted into database as a callback
+    all: (tableInput, callback) => {
         connection.query('SELECT * FROM ' + tableInput + ';', (err, result) => {
             if (err) throw err;
-            cb(result);
+            callback(result);
         });
     },
-    update: (tableInput, condition, cb) => {
+    update: (tableInput, condition, callback) => {
         connection.query('UPDATE ' + tableInput + ' SET devoured=true WHERE id=' + condition + ';', (err, result) => {
             if (err) throw err;
-            cb(result);
+            callback(result);
         });
     },
-    create: (tableInput, val, cb) => {
+    create: (tableInput, val, callback) => {
         connection.query('INSERT INTO ' + tableInput + " (burger_name) VALUES ('" + val + "');", (err, result) => {
             if (err) throw err;
-            cb(result);
+            callback(result);
         });
     },
 
