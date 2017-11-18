@@ -3,13 +3,27 @@ const mysql = require("mysql");
 
 
 
-const connection = mysql.createConnection({
+let connection = mysql.createConnection({
     port: 3306,
     host: "localhost",
     user: "root",
     password: "",
     database: "burgers_db"
 });
+
+//heroku datatabase connection 
+if (process.env.JAWSDB_URL) {
+    connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+    connection = mysql.createConnection({
+        host: "localhost",
+        user: "root",
+        // password: "hacktheplanet",
+        // database: "todoagain_db"
+        password: "",
+        database: "burgers_db"
+    });
+}
 
 // Makes connection to SQL database
 connection.connect((err) => {
@@ -19,6 +33,8 @@ connection.connect((err) => {
     }
     console.log("connected as id " + connection.threadId);
 });
+
+
 
 
 
